@@ -59,7 +59,7 @@ else {
 	<form method="post">
 		<?php wp_nonce_field('save');?>
 		<div><?php gtop_field_textarea('footer', 'GTop Analytics code:', 'Add your GTop Analytics code here', 'rows="10"');?></div>
-		<div class="submit"><input type="submit" name="save" value="Save settings" /></div>
+		<div class="submit"><input type="submit" name="save" value="Save settings" /> Or add the <strong>GTop widget</strong> to any widgetized area of your theme.</div>
 	</form>
 	<p>Make sure Your WordPress theme has the <code>wp_footer</code> template tag in the <strong>footer.php</strong> like this:</p>
 	<p><code>&lt;php wp_footer();?&gt;</code></p>

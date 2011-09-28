@@ -3,7 +3,7 @@
 Plugin Name: WordPress GTop Analytics
 Plugin URI: http://getbutterfly.com/wordpress-plugins/wordpress-gtop-analytics/
 Description: Adds GTop Analytics code to your footer without messing with the source code.
-Version: 1.0
+Version: 1.1
 Author: Ciprian Popescu
 Author URI: http://getbutterfly.com/
 */
@@ -54,5 +54,61 @@ function gtop_wp_footer() {
     global $gtop_options;
 	$text = $gtop_options['footer'];
     echo $text;
+}
+
+// The widget...
+function gtop_widget($gtop_code) {
+	if($gtop_code != '') {
+		echo $gtop_code; 	
+	}
+}
+
+class gtop_widget_Class extends WP_Widget {
+	function gtop_widget_Class() {
+		$widget_ops = array('classname' => 'gtop', 'description' => 'A widget that displays the GTop button.');
+		$control_ops = array('id_base' => 'gtop-widget');
+		$this->WP_Widget('gtop-widget', 'GTop Widget', $widget_ops, $control_ops);
+	}
+
+	// How to display the widget on the screen.
+	function widget($args, $instance) {
+		extract($args);
+
+		/* Our variables from the widget settings. */
+		$gtop_code = $instance['gtop_code'];
+
+		echo $before_widget;
+		/* Display the widget title if one was input (before and after defined by themes). */
+		gtop_widget($gtop_code);
+		echo $after_widget;
+	}
+
+	// Update the widget settings.
+	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+
+		/* Strip tags for title and name to remove HTML (important for text inputs). */
+		$instance['gtop_code'] 	= strip_tags($new_instance['gtop_code']);
+
+		return $instance;
+	}
+
+	// Displays the widget settings controls on the widget panel. Make use of the get_field_id() and get_field_name() function when creating your form elements.
+	function form($instance) {
+		/* Set up some default widget settings. */
+		$instance = wp_parse_args((array) $instance);?>
+
+		<p>Add your <strong>GTop Analytics</strong> code here:</p>
+		<p>
+			<textarea id="<?php echo $this->get_field_id('gtop_code');?>" name="<?php echo $this->get_field_name('gtop_code'); ?>" rows="6" cols="40"><?php echo $instance['gtop_code'];?></textarea>
+		</p>
+	<?php
+	}
+}
+add_action('widgets_init', 'gtop_load_widgets');
+
+// Register our widget.
+function gtop_load_widgets() {
+	register_widget('gtop_widget_Class');
 }
 ?>
