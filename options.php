@@ -41,7 +41,7 @@ else {
 			<img src="<?php echo GTOP_PLUGIN_URL;?>/gtop.jpg" alt="GTop" style="float: left; margin-right: 16px;" />
 			Add your GTop Analytics code in the text area below.<br />
 			<strong>Gtop.ro</strong> is a Romanian analytics system, similar to Google Analytics.<br />
-			<small>This plugin was built by <a href="http://getbutterfly.com/" rel="external">getButterfly</a> for <a href="http://www.gtop.ro/" rel="external">GTop.ro</a> users. Visit <a href="http://www.gtop.ro/" rel="external"><strong>GTop.ro</strong></a> or <a href="http://www.gtop.ro/forums/" rel="external"><strong>GTop.ro forums</strong></a>!</small>
+			<small>This plugin was built by <a href="http://getbutterfly.com/" rel="external">getButterfly</a> for <a href="http://www.gtop.ro/" rel="external">GTop.ro</a> users.</small>
 		</p>
 	</div>
 
