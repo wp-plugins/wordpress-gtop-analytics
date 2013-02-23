@@ -20,6 +20,9 @@ Adds GTop Analytics code to your footer or any other widgetized zone without mes
 
 == Changelog ==
 
+= 1.1.4.1 =
+* Small UI tweaks
+
 = 1.1.4 =
 * Added GPL license and marked the readme.txt file
 * Checked compatibility with the latest WordPress version

@@ -41,16 +41,17 @@ function gtop_options_page() {
 			&lt;!--/ GTop.ro - (end) v2.1/--&gt;
 		</code></p>
 		<form method="post">
-	';
-	$output .= wp_nonce_field('save');
-	$output .= '<div>';
-	$output .= '<div><div><strong>GTop Analytics code:</strong></div><div><textarea style="width: 100%; height: 180px" wrap="off" name="gtopcode">' . $options . '</textarea></div><div class="description"><small>Add your GTop Analytics code here</small></div>
-		</div>';
-	$output .= '
-		</div>
-		<div class="submit"><input type="submit" name="save" value="Save settings" /> Or add the <strong>GTop widget</strong> to any widgetized area of your theme.</div>
+			';
+			$output .= wp_nonce_field('save');
+			$output .= '
+			<p><strong>GTop Analytics code:</strong></p>
+			<p>
+				<textarea class="large-text code" rows="10" name="gtopcode">' . $options . '</textarea><br>
+				<span class="description"><small>Add your GTop Analytics code here</small></span>
+			</p>
+			<p><input type="submit" name="save" class="button button-primary" value="Save Changes" /> Or add the <strong>GTop widget</strong> to any widgetized area of your theme.</p>
 		</form>
-		<p>Make sure Your WordPress theme has the <code>wp_footer</code> template tag in the <strong>footer.php</strong> like this:</p>
+		<p>Make sure your WordPress theme has the <code>wp_footer</code> template tag in the <strong>footer.php</strong> like this:</p>
 		<p><code>&lt;php wp_footer();?&gt;</code></p>
 		</div>
 	';
