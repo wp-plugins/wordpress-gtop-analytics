@@ -1,15 +1,15 @@
 <?php
 /*
-Plugin Name: WordPress GTop Analytics
+Plugin Name: GTop Analytics
 Plugin URI: http://getbutterfly.com/wordpress-plugins/wordpress-gtop-analytics/
 Description: Adds GTop Analytics code to your footer without messing with the source code.
-Version: 1.1.3
+Version: 1.1.4
 Author: Ciprian Popescu
 Author URI: http://getbutterfly.com/
 */
 
 /*
-  Copyright 2010, 2011, 2012  Ciprian Popescu  (email : getbutterfly@gmail.com)
+  Copyright 2010, 2011, 2012, 2013 Ciprian Popescu (email: getbutterfly@gmail.com)
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -26,11 +26,11 @@ Author URI: http://getbutterfly.com/
   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 //
-define('GTOP_PLUGIN_URL', WP_PLUGIN_URL.'/'.dirname(plugin_basename(__FILE__)));
-define('GTOP_PLUGIN_PATH', WP_PLUGIN_DIR.'/'.dirname(plugin_basename(__FILE__)));
+define('GTOP_PLUGIN_URL', WP_PLUGIN_URL . '/' . dirname(plugin_basename(__FILE__)));
+define('GTOP_PLUGIN_PATH', WP_PLUGIN_DIR . '/' . dirname(plugin_basename(__FILE__)));
 //
 
-include(GTOP_PLUGIN_PATH.'/options.php');
+include(GTOP_PLUGIN_PATH . '/options.php');
 
 $gtop_options = get_option('gtop');
 
@@ -48,9 +48,8 @@ function gtop_wp_footer() {
 
 // The widget...
 function gtop_widget($gtop_code) {
-	if($gtop_code != '') {
+	if($gtop_code != '')
 		echo $gtop_code; 	
-	}
 }
 
 class gtop_widget_Class extends WP_Widget {
@@ -85,19 +84,17 @@ class gtop_widget_Class extends WP_Widget {
 
 	// Displays the widget settings controls on the widget panel. Make use of the get_field_id() and get_field_name() function when creating your form elements.
 	function form($instance) {
-		/* Set up some default widget settings. */
-		$instance = wp_parse_args((array) $instance);?>
+		$instance = wp_parse_args((array) $instance); ?>
 
 		<p>Add your <strong>GTop Analytics</strong> code here:</p>
 		<p>
-			<textarea id="<?php echo $this->get_field_id('gtop_code');?>" name="<?php echo $this->get_field_name('gtop_code'); ?>" rows="6" cols="40"><?php echo $instance['gtop_code'];?></textarea>
+			<textarea id="<?php echo $this->get_field_id('gtop_code'); ?>" name="<?php echo $this->get_field_name('gtop_code'); ?>" rows="6" cols="40"><?php echo $instance['gtop_code']; ?></textarea>
 		</p>
 	<?php
 	}
 }
 add_action('widgets_init', 'gtop_load_widgets');
 
-// Register our widget.
 function gtop_load_widgets() {
 	register_widget('gtop_widget_Class');
 }

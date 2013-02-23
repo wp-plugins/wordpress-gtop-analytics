@@ -22,7 +22,7 @@ function gtop_options_page() {
 	$output .= '
 		<div class="updated fade below-h2" style="background-color: #f2f2f2; border-color: #eeeeee;">
 			<p class="description">
-				<img src="'.GTOP_PLUGIN_URL.'/gtop.jpg" alt="GTop" style="float: left; margin-right: 16px;" />
+				<img src="' . GTOP_PLUGIN_URL . '/gtop.jpg" alt="GTop" style="float: left; margin-right: 16px;" />
 				Add your GTop Analytics code in the text area below.<br />
 				<strong>Gtop.ro</strong> is a Romanian analytics system, similar to Google Analytics.<br />
 				<small>This plugin was built by <a href="http://getbutterfly.com/" rel="external">getButterfly</a> for <a href="http://www.gtop.ro/" rel="external">GTop.ro</a> users.</small>
@@ -44,7 +44,7 @@ function gtop_options_page() {
 	';
 	$output .= wp_nonce_field('save');
 	$output .= '<div>';
-	$output .= '<div><div><strong>GTop Analytics code:</strong></div><div><textarea style="width: 100%; height: 180px" wrap="off" name="gtopcode">'.$options.'</textarea></div><div class="description"><small>Add your GTop Analytics code here</small></div>
+	$output .= '<div><div><strong>GTop Analytics code:</strong></div><div><textarea style="width: 100%; height: 180px" wrap="off" name="gtopcode">' . $options . '</textarea></div><div class="description"><small>Add your GTop Analytics code here</small></div>
 		</div>';
 	$output .= '
 		</div>
