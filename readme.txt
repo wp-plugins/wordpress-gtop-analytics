@@ -3,8 +3,8 @@ Contributors: butterflymedia, getbutterfly
 Tags: gtop, footer, code, analytics, stats, statistics
 License: GPLv3
 Requires at least: 3.3
-Tested up to: 3.5.1
-Stable tag: 1.1.4
+Tested up to: 3.8-beta-1
+Stable tag: 1.1.5
 
 Adds GTop Analytics code to your footer or any other widgetized zone without messing with the source code.
 
@@ -19,6 +19,10 @@ Adds GTop Analytics code to your footer or any other widgetized zone without mes
 3. Configure the plugin
 
 == Changelog ==
+
+= 1.1.5 =
+* Updated GTop code sample code for https
+* Checked WordPress 3.8-beta compatibility
 
 = 1.1.4.1 =
 * Small UI tweaks

@@ -31,13 +31,13 @@ function gtop_options_page() {
 
 		<p>The code should look like this:</p>
 		<p><code>
-			&lt;!--/ GTop.ro - (begin) v2.1/--&gt;<br />
-			&lt;script type="text/javascript" language="javascript"&gt;<br />
-			var site_id = XXXXX;<br />
-			var gtopSiteIcon = XX;<br />
-			&lt;/script&gt;<br />
-			&lt;script type="text/javascript" language="javascript" src="http://fx.gtop.ro/js/gTOP.js?v=2"&gt;&lt;/script&gt;<br />
-			&lt;noscript&gt;&lt;a href="http://www.gtop.ro/"&gt;GTop.ro - &lt;/a>&lt;/noscript&gt;<br />
+			&lt;!--/ GTop.ro - (begin) v2.1/--&gt;<br>
+			&lt;script type="text/javascript" language="javascript"&gt;<br>
+			var site_id = XXXXX;<br>
+			var gtopSiteIcon = XX;<br>
+			var _gtUrl = (("https:" == document.location.protocol) ? "https://secure." : "http://fx.");<br>
+			document.write(unescape("%3Cscript src=\'" + _gtUrl + "gtop.ro/js/gTOP.js\' type=\'text/javascript\'%3E%3C/script%3E"));<br>
+			&lt;/script&gt;<br>
 			&lt;!--/ GTop.ro - (end) v2.1/--&gt;
 		</code></p>
 		<form method="post">
@@ -47,11 +47,14 @@ function gtop_options_page() {
 			<p><strong>GTop Analytics code:</strong></p>
 			<p>
 				<textarea class="large-text code" rows="10" name="gtopcode">' . $options . '</textarea><br>
-				<span class="description"><small>Add your GTop Analytics code here</small></span>
+				<span class="description">Add your GTop Analytics code here. You can add the optional online users code in the same box above.</span>
 			</p>
-			<p><input type="submit" name="save" class="button button-primary" value="Save Changes" /> Or add the <strong>GTop widget</strong> to any widgetized area of your theme.</p>
+			<p><input type="submit" name="save" class="button button-primary" value="Save Changes"></p>
 		</form>
-		<p>Make sure your WordPress theme has the <code>wp_footer</code> template tag in the <strong>footer.php</strong> like this:</p>
+		<p>
+			Use the <strong>GTop widget</strong> to add the code to any widgetized area of your theme.<br>
+			Make sure your WordPress theme has the <code>wp_footer</code> template tag in the <strong>footer.php</strong> like this:
+		</p>
 		<p><code>&lt;php wp_footer();?&gt;</code></p>
 		</div>
 	';
