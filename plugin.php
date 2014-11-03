@@ -3,7 +3,7 @@
 Plugin Name: GTop Analytics
 Plugin URI: http://getbutterfly.com/wordpress-plugins/wordpress-gtop-analytics/
 Description: Adds GTop Analytics code to your footer without messing with the source code.
-Version: 1.1.5.2
+Version: 1.1.5.3
 Author: Ciprian Popescu
 Author URI: http://getbutterfly.com/
 
@@ -25,7 +25,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
 //
-define('GTOP_PLUGIN_URL', WP_PLUGIN_URL . '/' . dirname(plugin_basename(__FILE__)));
 define('GTOP_PLUGIN_PATH', WP_PLUGIN_DIR . '/' . dirname(plugin_basename(__FILE__)));
 //
 

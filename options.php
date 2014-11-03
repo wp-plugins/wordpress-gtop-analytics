@@ -1,7 +1,6 @@
 <?php
 function gtop_options_page() {
-	$output = '
-		<div class="wrap">
+	$output = '<div class="wrap">
 			<div id="icon-plugins" class="icon32"></div>
 			<h2>GTop Analytics</h2>';
 
@@ -9,18 +8,15 @@ function gtop_options_page() {
 				if(!wp_verify_nonce($_POST['_wpnonce'], 'save')) die();
 				$options = stripslashes_deep($_POST['gtopcode']);
 				update_option('gtop', $options);
-				$output .= '
-					<div class="updated fade below-h2" style="background-color: rgb(255, 251, 204);">
+				$output .= '<div class="updated fade below-h2" style="background-color: rgb(255, 251, 204);">
 						<p>Your settings have been saved.</p>
-					</div>
-				';
+					</div>';
 			}
 			else {
 				$options = get_option('gtop');
 			}
 
-	$output .= '
-		<div class="updated fade below-h2" style="background-color: #f2f2f2; border-color: #eeeeee;">
+	$output .= '<div class="updated fade below-h2" style="background-color: #f2f2f2; border-color: #eeeeee;">
 			<p class="description">
 				<img src="' . GTOP_PLUGIN_URL . '/gtop.jpg" alt="GTop" style="float: left; margin-right: 16px;" />
 				Add your GTop Analytics code in the text area below.<br />
@@ -40,11 +36,9 @@ function gtop_options_page() {
 			&lt;/script&gt;<br>
 			&lt;!--/ GTop.ro - (end) v2.1/--&gt;
 		</code></p>
-		<form method="post">
-			';
+		<form method="post">';
 			$output .= wp_nonce_field('save');
-			$output .= '
-			<p><strong>GTop Analytics code:</strong></p>
+			$output .= '<p><strong>GTop Analytics code:</strong></p>
 			<p>
 				<textarea class="large-text code" rows="10" name="gtopcode">' . $options . '</textarea><br>
 				<span class="description">Add your GTop Analytics code here. You can add the optional online users code in the same box above.</span>
@@ -56,8 +50,7 @@ function gtop_options_page() {
 			Make sure your WordPress theme has the <code>wp_footer</code> template tag in the <strong>footer.php</strong> like this:
 		</p>
 		<p><code>&lt;php wp_footer();?&gt;</code></p>
-		</div>
-	';
+		</div>';
 
 	echo $output;
 }

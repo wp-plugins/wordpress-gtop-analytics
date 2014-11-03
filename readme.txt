@@ -2,9 +2,9 @@
 Contributors: butterflymedia, getbutterfly
 Donate link: http://getbutterfly.com/wordpress-plugins-free/
 Tags: gtop, footer, code, analytics, stats, statistics
-Requires at least: 3.3
-Tested up to: 3.8
-Stable tag: 1.1.5.2
+Requires at least: 3.5
+Tested up to: 4.0
+Stable tag: 1.1.5.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -21,6 +21,10 @@ Read more about GTop on http://www.gtopstats.com/ [EN] or http://www.gtop.ro/ [R
 3. Configure the plugin
 
 == Changelog ==
+
+= 1.1.5.3 =
+* Added plugin icon
+* Various code improvements
 
 = 1.1.5.2 =
 * Added license link
