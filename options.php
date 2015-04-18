@@ -1,7 +1,6 @@
 <?php
 function gtop_options_page() {
 	$output = '<div class="wrap">
-			<div id="icon-plugins" class="icon32"></div>
 			<h2>GTop Analytics</h2>';
 
 			if(isset($_POST['save'])) {
@@ -51,6 +50,13 @@ function gtop_options_page() {
 		</p>
 		<p><code>&lt;php wp_footer();?&gt;</code></p>
 		</div>';
+
+    $output .= '<div class="postbox">
+        <div class="inside">
+            <p>For support, feature requests and bug reporting, please visit the <a href="//getbutterfly.com/" rel="external">official website</a>.</p>
+            <p>&copy;' . date('Y') . ' <a href="//getbutterfly.com/" rel="external"><strong>getButterfly</strong>.com</a> &middot; <a href="//getbutterfly.com/forums/" rel="external">Support forums</a> &middot; <a href="//getbutterfly.com/trac/" rel="external">Trac</a> &middot; <small>Code wrangling since 2005</small></p>
+        </div>
+    </div>';
 
 	echo $output;
 }
